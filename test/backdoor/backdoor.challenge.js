@@ -44,8 +44,12 @@ describe('[Challenge] Backdoor', function () {
         await token.transfer(walletRegistry.address, AMOUNT_TOKENS_DISTRIBUTED);
     });
 
-    it('Execution', async function () {
-        /** CODE YOUR SOLUTION HERE */
+    it('Exploit', async function () {
+        //exploit() function in the attacker contract will be called during deployment
+        attacker = await (await ethers.getContractFactory('Exploit_Backdoor', player)).deploy(
+            walletRegistry.address,
+            users
+        );
     });
 
     after(async function () {

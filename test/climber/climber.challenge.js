@@ -56,8 +56,12 @@ describe('[Challenge] Climber', function () {
         await token.transfer(vault.address, VAULT_TOKEN_BALANCE);
     });
 
-    it('Execution', async function () {
-        /** CODE YOUR SOLUTION HERE */
+    it('Exploit', async function () {
+        attacker = await (await ethers.getContractFactory('Exploit_Climber', player)).deploy(
+            vault.address,
+            token.address
+        );
+        await attacker.connect(player).exploit();
     });
 
     after(async function () {
