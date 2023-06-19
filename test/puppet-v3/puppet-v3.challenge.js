@@ -34,8 +34,7 @@ describe("[Challenge] Puppet v3", function () {
     let initialBlockTimestamp;
 
     /** SET RPC URL HERE */
-    const MAINNET_FORKING_URL =
-        "https://eth-mainnet.g.alchemy.com/v2/Ph3CRRfcZk_GCQNxNZ0ZuHiqwXBLA0z9";
+    const MAINNET_FORKING_URL = "";
 
     // Initial liquidity amounts for Uniswap v3 pool
     const UNISWAP_INITIAL_TOKEN_LIQUIDITY = 100n * 10n ** 18n;
